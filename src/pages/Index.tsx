@@ -5,11 +5,11 @@ import ChatMessagesArea from "@/components/ChatMessagesArea";
 import { useSakernasChat } from "@/hooks/useSakernasChat";
 
 const Index = () => {
-  const { messages, isLoading, sendMessage } = useSakernasChat();
+  const { messages, isLoading, sendMessage, clearMessages } = useSakernasChat();
 
   return (
     <div className="flex flex-col h-screen bg-background">
-      <ChatHeader />
+      <ChatHeader onClearChat={clearMessages} />
 
       <main className="flex-1 overflow-y-auto">
         {messages.length === 0 ? (
