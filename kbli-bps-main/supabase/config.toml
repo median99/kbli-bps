@@ -1,0 +1,4 @@
+project_id = "mtqnfsgaylyckwzqobvw"
+
+[functions.sakernas-chat]
+verify_jwt = false
