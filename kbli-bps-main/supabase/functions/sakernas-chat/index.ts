@@ -38,7 +38,7 @@ Tugas Anda:
 - Menjawab dalam Bahasa Indonesia yang jelas dan profesional
 
 Contoh kode yang Anda ketahui:
-- 01111: Budidaya Padi
+- 01111: Budidaya Jagung
 - 10110: Kegiatan Rumah Potong dan Pengepakan Daging Bukan Unggas
 - 47111: Perdagangan Eceran Berbagai Macam Barang Terutama Makanan, Minuman atau Tembakau di Toko
 - Dan ribuan kode lainnya
