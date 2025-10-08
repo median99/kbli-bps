@@ -1,8 +1,5 @@
-import { Bot, User, Copy } from "lucide-react";
+import { Bot, User } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { toast } from "sonner";
-import ReactMarkdown from "react-markdown"; // Import ReactMarkdown
-import remarkGfm from "remark-gfm"; // Import remarkGfm for GitHub Flavored Markdown
 
 interface ChatMessageProps {
   role: "user" | "assistant";
@@ -11,11 +8,6 @@ interface ChatMessageProps {
 
 const ChatMessage = ({ role, content }: ChatMessageProps) => {
   const isUser = role === "user";
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(content);
-    toast.success("Pesan disalin ke clipboard!");
-  };
 
   return (
     <div
@@ -38,21 +30,9 @@ const ChatMessage = ({ role, content }: ChatMessageProps) => {
         <p className="text-sm font-medium text-foreground/80">
           {isUser ? "Anda" : "AI SAKERNAS"}
         </p>
-        <div className="prose dark:prose-invert text-sm text-foreground leading-relaxed">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {content}
-          </ReactMarkdown>
+        <div className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">
+          {content}
         </div>
-        {!isUser && content.length > 0 && (
-          <button
-            onClick={handleCopy}
-            className="mt-2 flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Salin pesan"
-          >
-            <Copy className="w-3 h-3" />
-            Salin
-          </button>
-        )}
       </div>
     </div>
   );

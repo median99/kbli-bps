@@ -141,15 +141,9 @@ export const useSakernasChat = () => {
     }
   }, [messages]);
 
-  const clearMessages = useCallback(() => {
-    setMessages([]);
-    toast.info("Obrolan telah dibersihkan.");
-  }, []);
-
   return {
     messages,
     isLoading,
     sendMessage,
-    clearMessages,
   };
 };
